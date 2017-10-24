@@ -23,12 +23,13 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                String smsNumber = "05535040000"; 
+                String smsNumber = "05535040000";
                 String smsText = "Hello, I'm a test message!";
                 Uri uri = Uri.parse("smsto:" + smsNumber);
                 Intent intent = new Intent(Intent.ACTION_SENDTO, uri);
                 intent.putExtra("sms_body", smsText);
-                startActivity(intent);
+                //startActivity(intent);
+                startActivity(intent.createChooser(intent,"sendSMS"));
             }
         });
 
